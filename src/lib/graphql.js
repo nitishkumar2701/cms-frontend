@@ -1,6 +1,6 @@
 export async function fetchGraphQL(query, variables = {}) {
   // Ensure your .env.local file has NEXT_PUBLIC_GRAPHQL_URL set!
-  const endpoint = process.env.NEXT_PUBLIC_GRAPHQL_URL;
+  const endpoint = process.env.GRAPHQL_URL;
 
   if (!endpoint) {
     throw new Error("NEXT_PUBLIC_GRAPHQL_URL is missing in .env.local");
