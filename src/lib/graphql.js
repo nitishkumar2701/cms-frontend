@@ -3,7 +3,7 @@ export async function fetchGraphQL(query, variables = {}) {
   const endpoint = process.env.GRAPHQL_URL;
 
   if (!endpoint) {
-    throw new Error("NEXT_PUBLIC_GRAPHQL_URL is missing in .env.local");
+    throw new Error("GRAPHQL_URL is missing in .env.local");
   }
 
   const res = await fetch(endpoint, {
