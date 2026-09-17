@@ -57,16 +57,7 @@ export default async function AboutPage() {
             <h2 className="text-3xl font-bold text-gray-900">Our Story</h2>
 
             <div className="text-gray-600 text-lg leading-relaxed space-y-4">
-              {aboutData.sectionBody ? (
-                <p>{aboutData.sectionBody}</p>
-              ) : (
-                <p>
-                  We are a premier real estate agency dedicated to helping you find
-                  the perfect property. Our team of experts brings years of
-                  experience and a passion for matching people with their ideal
-                  homes.
-                </p>
-              )}
+              {aboutData.sectionBody}
             </div>
 
             <div className={`pt-4 ${!aboutData.imageUrl ? "flex justify-center" : ""}`}>
@@ -87,25 +78,6 @@ export default async function AboutPage() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Trust strip */}
-      <section className="bg-gray-50 border-t border-gray-100 py-16">
-        <div className="container mx-auto px-6 max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "15+", label: "Years Experience" },
-            { value: "500+", label: "Homes Delivered" },
-            { value: "98%", label: "Client Satisfaction" },
-            { value: "24/7", label: "Support" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </section>
     </div>
