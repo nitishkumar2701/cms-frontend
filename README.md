@@ -1,17 +1,17 @@
 # IRE Homes Frontend Application
 
-IRE Homes Frontend is a modern, high-performance client-facing web application built with **Next.js** (App Router)[cite: 4]. It serves as the public website displaying real estate house types[cite: 1], news posts[cite: 1], and dynamic page sections[cite: 1] fetched securely from the backend CMS via **GraphQL**[cite: 4], utilizing **Incremental Static Regeneration (ISR)**[cite: 1] and an automated revalidation API route[cite: 4].
+IRE Homes Frontend is a modern, high-performance client-facing web application built with **Next.js** (App Router). It serves as the public website displaying real estate house types, news posts, and dynamic page sections fetched securely from the backend CMS via **GraphQL**, utilizing **Incremental Static Regeneration (ISR)** and an automated revalidation API route.
 
 ---
 
 ## 🚀 Key Features & Capabilities
 
-* **Next.js App Router Architecture:** Leverages modern React server and client components located under `src/app/`[cite: 4].
-* **Dynamic Content via GraphQL:** Integrates with backend data layers using custom GraphQL queries (`src/lib/graphql.js`)[cite: 4].
-* **Incremental Static Regeneration (ISR):** Fast page rendering with instant on-demand cache updates triggered via the `/api/revalidate` route[cite: 4].
-* **Interactive Components:** Features dynamic UI elements like the custom cross-fade `ImageCarousel` component (`src/components/imageCarousel.js`)[cite: 1, 4].
-* **Public Views:** Fully optimized pages for home, about, contact, house types, and news[cite: 4].
-* **Automated CI/CD & Testing:** Includes a GitHub Actions CI pipeline (`.github/workflows/ci.yml`) and GraphQL test suites (`src/lib/tests/graphql.test.js`)[cite: 4].
+* **Next.js App Router Architecture:** Leverages modern React server and client components located under `src/app/`.
+* **Dynamic Content via GraphQL:** Integrates with backend data layers using custom GraphQL queries (`src/lib/graphql.js`).
+* **Incremental Static Regeneration (ISR):** Fast page rendering with instant on-demand cache updates triggered via the `/api/revalidate` route.
+* **Interactive Components:** Features dynamic UI elements like the custom cross-fade `ImageCarousel` component (`src/components/imageCarousel.js`).
+* **Public Views:** Fully optimized pages for home, about, contact, house types, and news.
+* **Automated CI/CD & Testing:** Includes a GitHub Actions CI pipeline (`.github/workflows/ci.yml`) and GraphQL test suites (`src/lib/tests/graphql.test.js`).
 
 ---
 
@@ -37,27 +37,27 @@ AI was used strictly as an assistant and productivity tool to accelerate boilerp
 ## 📁 Directory Structure
 
 ```text
-├── .github/workflows/       # GitHub Actions CI workflow (ci.yml)[cite: 4]
-├── public/                  # Static assets and favicons[cite: 4]
+├── .github/workflows/       # GitHub Actions CI workflow (ci.yml)
+├── public/                  # Static assets and favicons
 ├── src/
-│   ├── app/                 # Next.js App Router views[cite: 4]
-│   │   ├── about/           # About page[cite: 4]
-│   │   ├── api/revalidate/  # ISR revalidation endpoint route[cite: 4]
-│   │   ├── contact/         # Contact page[cite: 4]
-│   │   ├── house-types/     # Real estate property listings[cite: 4]
-│   │   ├── news/            # News and blog articles[cite: 4]
-│   │   ├── favicon.ico      # Site icon[cite: 4]
-│   │   ├── globals.css      # Global Tailwind/CSS styles[cite: 4]
-│   │   ├── layout.js        # Root layout wrapper[cite: 4]
-│   │   └── page.js          # Homepage view[cite: 4]
-│   ├── components/          # Reusable UI components[cite: 4]
-│   │   └── imageCarousel.js # Cross-fade image carousel component[cite: 1, 4]
-│   └── lib/                 # Utility files and test suites[cite: 4]
-│       ├── tests/           # Unit and integration tests (graphql.test.js)[cite: 4]
-│       └── graphql.js       # GraphQL client query handlers[cite: 4]
-├── .env.local               # Local environment variables[cite: 4]
-├── .gitignore               # Git ignore rules[cite: 4]
-└── eslint.config.mjs        # ESLint configuration[cite: 4]
+│   ├── app/                 # Next.js App Router views
+│   │   ├── about/           # About page
+│   │   ├── api/revalidate/  # ISR revalidation endpoint route
+│   │   ├── contact/         # Contact page
+│   │   ├── house-types/     # Real estate property listings
+│   │   ├── news/            # News and blog articles
+│   │   ├── favicon.ico      # Site icon
+│   │   ├── globals.css      # Global Tailwind/CSS styles
+│   │   ├── layout.js        # Root layout wrapper
+│   │   └── page.js          # Homepage view
+│   ├── components/          # Reusable UI components
+│   │   └── imageCarousel.js # Cross-fade image carousel component
+│   └── lib/                 # Utility files and test suites
+│       ├── tests/           # Unit and integration tests (graphql.test.js)
+│       └── graphql.js       # GraphQL client query handlers
+├── .env.local               # Local environment variables
+├── .gitignore               # Git ignore rules
+└── eslint.config.mjs        # ESLint configuration
 
 ```
 
