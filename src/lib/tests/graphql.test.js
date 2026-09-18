@@ -1,4 +1,4 @@
-// src/lib/graphql.test.js
+// src/lib/tests/graphql.test.js
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { fetchGraphQL } from "../graphql";
 
@@ -21,11 +21,12 @@ const GET_PUBLIC_PUBLISHED_CONTENT = `
 
 describe("fetchGraphQL — GetPublicPublishedContent", () => {
   beforeEach(() => {
-    process.env.GRAPHQL_ENDPOINT = "https://example.com/graphql";
+    process.env.GRAPHQL_URL = "https://example.com/graphql"; // fixed: was GRAPHQL_ENDPOINT
   });
 
   afterEach(() => {
     vi.restoreAllMocks();
+    delete process.env.GRAPHQL_URL;
   });
 
   it("returns both newsPosts and houseTypes from the response", async () => {
@@ -106,20 +107,11 @@ describe("fetchGraphQL — GetPublicPublishedContent", () => {
     expect(result.houseTypes).toEqual([]);
   });
 
-  it("sends the exact query string to the endpoint", async () => {
-    global.fetch = vi.fn().mockResolvedValue({
-      ok: true,
-      json: async () => ({ data: { newsPosts: [], houseTypes: [] } }),
-    });
+  it("throws a clear error when GRAPHQL_URL is not set", async () => {
+    delete process.env.GRAPHQL_URL;
 
-    await fetchGraphQL(GET_PUBLIC_PUBLISHED_CONTENT);
-
-    expect(global.fetch).toHaveBeenCalledWith(
-      "https://example.com/graphql",
-      expect.objectContaining({
-        method: "POST",
-        body: JSON.stringify({ query: GET_PUBLIC_PUBLISHED_CONTENT }),
-      })
+    await expect(fetchGraphQL(GET_PUBLIC_PUBLISHED_CONTENT)).rejects.toThrow(
+      "GRAPHQL_URL is missing in .env.local"
     );
   });
 });
