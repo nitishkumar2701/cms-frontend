@@ -16,6 +16,7 @@ export async function POST(request) {
     revalidatePath("/house-types");
     revalidatePath("/"); 
     revalidatePath("/about");
+    revalidatePath("/contact");
     
     return NextResponse.json({ revalidated: true, now: Date.now() });
   } catch (err) {
