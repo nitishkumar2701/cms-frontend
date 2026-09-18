@@ -69,6 +69,7 @@ AI was used strictly as an assistant and productivity tool to accelerate boilerp
 
 * **Node.js** (v18+ recommended)
 * A running instance of the **IRE Homes CMS Backend** (for GraphQL data queries)
+* CMS Backend - https://cms-backend-vjib.onrender.com
 
 
 
