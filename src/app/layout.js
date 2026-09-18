@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./globals.css"; // Ensure Tailwind is imported here
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
